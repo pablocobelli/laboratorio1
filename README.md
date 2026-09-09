@@ -131,3 +131,13 @@ Cualquiera sea el camino que elijan, hay tres cosas para revisar en el archivo r
 - **[Frecuencia de palabras en textos](notebooks/Frecuencia_de_palabras_en_textos.ipynb)**
   Una introducción a las leyes de escala: contamos las palabras de un texto, las ordenamos por
   frecuencia y graficamos ocurrencia contra rango.
+
+---
+
+## Mantenimiento
+
+*Nota para quien mantiene el repositorio; no hace falta para cursar la materia.*
+
+En [`tools/`](tools/) hay utilidades para el mantenimiento de estas notebooks. Por ahora,
+`agregar_badge_colab.py`, que pone el badge de Colab en las notebooks que todavía no lo tienen
+—útil al sumar una notebook nueva—. Los detalles están en [`tools/README.md`](tools/README.md).
