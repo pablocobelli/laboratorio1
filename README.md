@@ -29,6 +29,53 @@ sí pueden trabajar y guardar normalmente con `Ctrl+S`. De ahí en más, trabaje
 copia. Si prefieren guardarla en su computadora, la opción es **Archivo → Descargar → Descargar
 .ipynb**.
 
+## Cómo llevar el código a Spyder
+
+Las notebooks son el formato que usamos para presentar el material en clase, pero el código que
+contienen es Python común y corriente: si quieren ejecutarlo o modificarlo en Spyder, pueden
+extraerlo sin problema. Hay tres formas, de la más simple a la más completa.
+
+**1. Copiar y pegar.** Si sólo necesitan un fragmento (una función, un ajuste, un gráfico),
+seleccionen el contenido de la celda, cópienlo y péguenlo en un archivo nuevo de Spyder. Para la
+mayoría de los casos alcanza con esto.
+
+**2. Descargar la notebook entera como script, desde Colab.** Con la notebook abierta en Colab:
+
+> **Archivo → Descargar → Descargar .py**
+
+Obtienen un archivo `.py` con todo el código de la notebook, en orden, y con el texto de las
+celdas de markdown convertido en comentarios.
+
+**3. Convertirla en su propia computadora.** Si tienen Anaconda instalado (que es lo que trae
+Spyder), ya cuentan con la herramienta que hace esa conversión. Descarguen el archivo `.ipynb` y
+desde la terminal ejecuten:
+
+```bash
+jupyter nbconvert --to python Standard_Error.ipynb
+```
+
+Eso genera `Standard_Error.py` en la misma carpeta.
+
+### Tres detalles a tener en cuenta
+
+Cualquiera sea el camino que elijan, hay tres cosas para revisar en el archivo resultante:
+
+- **Las líneas que empiezan con `%`.** Van a encontrar líneas como `%matplotlib inline`: son
+  instrucciones propias de las notebooks, no son Python. Si las dejan, el script no corre.
+  **Bórrenlas o coméntenlas**: en Spyder no hacen falta, los gráficos aparecen solos en el panel de
+  Plots. (Si descargaron el `.py` desde Colab, la misma línea aparece transformada en algo como
+  `get_ipython().run_line_magic('matplotlib', 'inline')`; con esa hagan lo mismo.)
+
+- **Los separadores `# In[ ]:`.** Marcan dónde empezaba cada celda de la notebook. Spyder también
+  tiene celdas, pero las marca con `# %%`. Si reemplazan un texto por el otro (Buscar y reemplazar,
+  `Ctrl+H`), van a poder ejecutar el script celda por celda con `Ctrl+Enter`, igual que en la
+  notebook. Es la forma más cómoda de trabajar y se los recomiendo.
+
+- **Los archivos de datos.** Algunas notebooks leen datos de una dirección de internet: esas
+  funcionan igual en Spyder sin cambiar nada. Otras leen un archivo local (por ejemplo
+  `datos.csv`); en ese caso asegúrense de que el archivo esté en la misma carpeta que el script, o
+  indiquen la ruta completa.
+
 ## Contenido
 
 ### Para empezar
